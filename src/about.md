@@ -1,4 +1,4 @@
 ---
-title: About
 layout: base.njk
+title: About
 ---

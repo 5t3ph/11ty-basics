@@ -1,10 +1,8 @@
 ---
-title: Hello World
 layout: base.njk
+title: Hello World
 templateEngineOverride: njk,md
 ---
-
-## Blog Posts
 
 {% include "postlist.njk" %}
 

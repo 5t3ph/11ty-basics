@@ -1,5 +1,5 @@
 ---
-title: My First Blog
+title: My First Post
 ---
 
-This is my great blog post!
+Post content
