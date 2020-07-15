@@ -2,6 +2,10 @@
 
 > A barebones demo of basic but essential 11ty features.
 
+This was created to support a livestream walkthrough with @ediebue.
+
+> Check out the ["Steps to Create From Scratch"](https://github.com/5t3ph/11ty-basics/blob/master/StepsToCreate.md) which match the livestreamed steps
+
 ## Development Scripts
 
 **`npm run develop`**
