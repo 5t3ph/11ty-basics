@@ -1,5 +1,7 @@
 # Steps to Create From Scratch
 
+Here's the super slim steps, but for a more full in-depth tutorial, review the post on 11ty.Rocks: "[Create Your First Basic 11ty Website](https://11ty.rocks/posts/create-your-first-basic-11ty-website/)"
+
 ## Begin the Project
 
 `npm init`
@@ -8,7 +10,7 @@
 
 ```jsx
   "scripts": {
-    "develop": "eleventy --serve",
+    "start": "eleventy --serve",
     "build": "eleventy"
   },
 ```

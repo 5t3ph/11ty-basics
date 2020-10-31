@@ -1,10 +1,10 @@
 {
   "name": "11ty-basics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A barebones demo of basic but essential 11ty features.",
   "main": "index.js",
   "scripts": {
-    "develop": "eleventy --serve",
+    "start": "eleventy --serve",
     "build": "eleventy"
   },
   "repository": {
