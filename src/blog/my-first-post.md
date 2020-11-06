@@ -1,5 +1,5 @@
 ---
-title: My First Post
+title: Welcome to the Chandler family blog!
 ---
 
-Post content
+A place for us to post pictures and other things 🙂

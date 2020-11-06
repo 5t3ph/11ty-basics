@@ -1,11 +1,7 @@
 ---
 layout: base.njk
-title: Hello World
+title: Chandler Family
 templateEngineOverride: njk,md
 ---
 
 {% include "postlist.njk" %}
-
-## Cat of the Day
-
-<img src="{{ catpic }}" />
