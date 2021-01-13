@@ -2,12 +2,7 @@
 layout: base.njk
 ---
 
-<article>
-{{ content | safe}}
+<article class="lg:px-8 max-w-7xl mx-auto px-2 sm:px-6 py-4">
+    {{ content | safe}}
+    <a href="/" class="mt-8 flex text-blue-500 underline"><< Return Home</a>
 </article>
-
-<aside>
-{% for fact in facts | randomItem %}
-<p>{{ fact }}</p>
-{% endfor %}
-</aside>

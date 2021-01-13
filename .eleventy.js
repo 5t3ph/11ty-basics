@@ -1,12 +1,11 @@
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("./src/css");
-  eleventyConfig.addWatchTarget("./src/css/");
 
-  eleventyConfig.addFilter("randomItem", (arr) => {
-    arr.sort(() => {
-      return 0.5 - Math.random();
-    });
-    return arr.slice(0, 1);
+  eleventyConfig.addWatchTarget("./src/_tmp/style.css");
+  eleventyConfig.addPassthroughCopy("./src/images");
+  eleventyConfig.addPassthroughCopy({ "./src/_tmp/style.css": "./css/style.css" });
+
+  eleventyConfig.addShortcode("version", function () {
+    return String(Date.now());
   });
 
   return {

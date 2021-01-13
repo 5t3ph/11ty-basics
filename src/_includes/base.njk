@@ -7,8 +7,22 @@
 	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-	<header>
+	<nav class="bg-gray-800 max-w-7xl mx-auto px-2 py-2 sm:px-6 lg:px-8 lg:py-4">
+		<ul class="flex justify-center lg:justify-start">
+			<li class="pr-8 flex">
+				<a href="/" class="flex-shrink-0 flex items-center">
+					<img class="block lg:hidden h-8 w-auto" width="30px" height="30px" src="/images/chandler-crest.svg" alt="Chandler family crest" />
+					<img class="hidden lg:block h-8 lg:h-12 w-auto" width="40px" height="40px" src="/images/chandler-crest.svg" alt="Chandler family crest" />
+				</a>
+			</li>
+			<li class="hidden lg:flex">
+				<a href="/" class="bg-gray-900 text-white px-3 py-2 rounded-md font-medium flex items-center">Reunions</a>
+			</li>
+		</ul>
+	</nav>
+	<header class="lg:px-8 max-w-7xl mx-auto px-2 sm:px-6 py-4">
 		<h1>{{ title }}</h1>
+		<h2>{{ author }}</h2>
 	</header>
 	<main>
 	{{ content | safe }}
