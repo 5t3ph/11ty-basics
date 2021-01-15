@@ -1,10 +1,6 @@
-# 11ty Basics
+# Chandler reunion
 
-> A barebones demo of basic but essential 11ty features.
-
-This was created to support the [livestream walkthrough](https://www.youtube.com/watch?v=2By887u7b0A) with [@edieblu](https://www.twitch.tv/edieblu).
-
-> Check out the ["Steps to Create From Scratch"](https://github.com/5t3ph/11ty-basics/blob/master/StepsToCreate.md) which match the livestreamed steps. For a more full in-depth tutorial, review the post on 11ty.Rocks: "[Create Your First Basic 11ty Website](https://11ty.rocks/posts/create-your-first-basic-11ty-website/)"
+> Static website for our reunions
 
 ## Development Scripts
 
