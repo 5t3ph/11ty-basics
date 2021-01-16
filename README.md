@@ -16,3 +16,4 @@ Use this as the "Publish command" if needed by hosting such as Netlify.
 \nUpdate readme
 
 trigger build
+\nUpdate readme
