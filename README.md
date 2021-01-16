@@ -13,3 +13,4 @@
 > Production build includes minified, autoprefixed CSS and social preview image generation
 
 Use this as the "Publish command" if needed by hosting such as Netlify.
+\nUpdate readme
