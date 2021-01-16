@@ -5,7 +5,7 @@ on:
   push:
   workflow_dispatch:
   schedule:
-    - cron:  '30 4 * * *'
+    - cron:  '*/5 * * * '
 
 jobs:
   build:
@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Update README
       run: |-
-        echo "\nUpdate readme" >> README.md
+        echo "\nUpdate readme `date`" >> README.md
     - name: Commit and push if changed
       run: |-
         git add README.md
