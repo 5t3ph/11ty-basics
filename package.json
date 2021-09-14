@@ -21,7 +21,9 @@
     "slugify": "^1.4.6"
   },
   "devDependencies": {
+    "@11ty/eleventy-cache-assets": "github:11ty/eleventy-cache-assets",
     "autoprefixer": "^10.2.1",
+    "dotenv": "^10.0.0",
     "postcss-cli": "^8.3.1",
     "tailwindcss": "^2.0.2"
   }

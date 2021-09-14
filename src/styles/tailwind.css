@@ -6,11 +6,4 @@
   .change {
     color: transparent;
   }
-  li {
-    color: red;
-  }
-}
-
-* {
-  border: 1px solid red;
 }

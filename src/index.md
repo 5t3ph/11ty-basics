@@ -2,7 +2,7 @@
 title: Chandler Family
 layout: default.liquid
 pagination:
-    data: posts
+    data: notion.posts
     size: 100
     alias: posts
 ---
@@ -12,12 +12,21 @@ pagination:
 </header>
 
 <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
-{% for post in posts %}
-<a href="/posts/{{ post.id }}/" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 ring-1">
-<div class="ml-4">
-    <p class="text-base font-medium text-gray-900">{{ post.Title }}</p>
-    <p class="mt-1 text-sm text-gray-500">{{ post.Summary }}</p>
-    <p class="mt-1 text-sm text-gray-500">{{ post.author.name }}</p>
+{% for post in notion.posts %}
+<a href="/posts/{{ post.slug }}/" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 ring-1 overflow-hidden">
+<div class="ml-4 flex">
+    <div class="rounded-lg -ml-7 -mt-3 -mb-3 mr-2 p-1">
+        <img class="max-h-32 rounded-l-lg" src="{{ post.Image | fallbackImageSrc }}" alt="relevant image for blog visual only" />
+    </div>
+    <div>
+        <p class="text-base font-medium text-gray-900 flex items-center">
+            <span class="mr-2">{{ post.Title }}</span>
+            <span class="bg-{{ post.Status | statusBadgeColor }}-600 text-white p-1 text-xs rounded leading-none flex items-center">
+                {{ post.Status }}
+            </span>
+        </p>
+        <p class="mt-1 text-sm text-gray-500">{{ post.Author }}</p>
+    </div>
 </div>
 </a>
 {% endfor %}

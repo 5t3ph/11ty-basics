@@ -26,6 +26,30 @@ module.exports = function (eleventyConfig) {
     return String(Date.now());
   });
 
+  let markdownIt = require("markdown-it");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+  };
+  const MarkDownIt = new markdownIt(options);
+  
+  eleventyConfig.addFilter('markIt', (content) => {
+    return MarkDownIt.render(content);
+  });
+
+  eleventyConfig.addFilter('fallbackImageSrc', (imageSource) => imageSource || 'https://via.placeholder.com/150x100.png');
+  eleventyConfig.addFilter('statusBadgeColor', (status) => {
+    switch (status) {
+      case 'Draft':
+        return 'blue';
+      case 'Published':
+        return 'green';
+      default:
+        return 'gray';
+    }
+  });
+
   return {
     dir: {
       input: "src",
