@@ -14,7 +14,7 @@ layout: default.liquid
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Martin Chandler</div>
             <p class="text-gray-700 text-base">
-                Martin's family at Ocean Shores to celebrate their 50th wedding anniversary.
+                Martin's family at Ocean Shores to celebrate their 60th wedding anniversary.
             </p>
         </div>
         <div class="px-6 pt-4 pb-2">
