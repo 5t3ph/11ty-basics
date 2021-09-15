@@ -2,18 +2,34 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>{{ renderData.title }}</title>
 	<link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" href="/images/chandler-crest.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" sizes="180x180" href="images/chandler-crest.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/chandler-crest.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/chandler-crest.svg">
+
+	<link rel="canonical" href="{{ metadata.url + page.url }}" />
+
+	{% include _metadata %}
 </head>
 <body>
-	<nav class="bg-gray-800 max-w-7xl mx-auto px-2 py-2 sm:px-6 lg:px-8 lg:py-4">
-		<ul class="flex justify-center lg:justify-start">
-			<li class="flex">
+	<nav class="bg-gray-800 mx-auto px-2 py-2 sm:px-6 lg:px-8 lg:py-4">
+		<ul class="flex justify-start">
+			<li class="flex mr-4">
 				<a href="/" class="flex-shrink-0 flex items-center">
-					<img class="block lg:hidden h-8 w-auto" width="30px" height="30px" src="/images/chandler-crest.svg" alt="Chandler family crest" />
-					<img class="hidden lg:block h-8 lg:h-12 w-auto" width="40px" height="40px" src="/images/chandler-crest.svg" alt="Chandler family crest" />
+					<img class="block h-12 w-auto" width="30px" height="30px" src="/images/chandler-crest.svg" alt="Chandler family crest" />
+				</a>
+			</li>
+			<li class="flex mr-4 p-4 {% if page.url == "/" %}bg-white text-black{%else%}text-white{%endif%}">
+				<a href="/" class="flex items-center hover:underline cursor-pointer">
+					Posts
+				</a>
+			</li>
+			<li class="flex mr-4 p-4 {% if page.url contains "/about" %}bg-white text-black{%else%}text-white{%endif%}">
+				<a href="/about" class="flex items-center hover:underline cursor-pointer">
+					About
 				</a>
 			</li>
 		</ul>
@@ -21,5 +37,6 @@
 	<main>
 	{{ content }}
 	</main>
+	{% include _footer %}
 </body>
 </html>

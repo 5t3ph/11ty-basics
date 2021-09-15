@@ -38,6 +38,10 @@ module.exports = function (eleventyConfig) {
     return MarkDownIt.render(content);
   });
 
+  eleventyConfig.addFilter('stringify', (content) => {
+    return JSON.stringify(content, null, 2);
+  });
+
   eleventyConfig.addFilter('fallbackImageSrc', (imageSource) => imageSource || 'https://via.placeholder.com/150x100.png');
   eleventyConfig.addFilter('statusBadgeColor', (status) => {
     switch (status) {
@@ -56,7 +60,6 @@ module.exports = function (eleventyConfig) {
       output: "public",
       includes: '_templates',
       data: '_data',
-    },
-    jsDataFileSuffix: '.data',
+    }
   };
 };

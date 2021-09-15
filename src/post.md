@@ -1,5 +1,5 @@
 ---
-title: Post
+title: Chandler Family - Post
 layout: default.liquid
 pagination:
   data: notion.posts

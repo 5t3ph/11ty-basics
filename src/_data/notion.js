@@ -4,10 +4,13 @@ require("dotenv").config();
 const ROOT_NOTION_API = 'https://api.notion.com/v1';
 
 const getDatabaseData = async () => {
-    const dataBaseQueryUrl = `${ROOT_NOTION_API}/databases/${process.env.DATABASE_ID}/query`;
-
     const filter = {
-        
+        "filter": {
+            "property": "Status",
+            "select": {
+                "equals": "Published"
+            }
+        },
         "sorts": [
             {
                 "property": "Published",
@@ -16,8 +19,7 @@ const getDatabaseData = async () => {
         ]
     };
 
-    // TODO: FIX cache to 1 d
-    const dataBaseData = await Cache(dataBaseQueryUrl, {
+    const dataBaseData = await Cache(`${ROOT_NOTION_API}/databases/${process.env.DATABASE_ID}/query`, {
         duration: "1d",
         type: "json",
         dryRun: true,
@@ -36,9 +38,7 @@ const getDatabaseData = async () => {
 }
 
 const getPageBlockChildrenData = async (blockId) => {
-    const blockChildrenQueryUrl = `${ROOT_NOTION_API}/blocks/${blockId}/children`;
-    // TODO: FIX cache to 1 d
-    const pageData = await Cache(blockChildrenQueryUrl, {
+    const pageData = await Cache(`${ROOT_NOTION_API}/blocks/${blockId}/children`, {
         duration: "1d",
         type: "json",
         fetchOptions: {
@@ -146,7 +146,7 @@ module.exports = async function () {
                     break;
                 default:
                     mdConvert = '';
-                    // mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
                     break;
             }
 
