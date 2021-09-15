@@ -10,7 +10,7 @@ layout: default.liquid
 
 <div class="relative grid grid-rows-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8 sm:place-items-center">
     <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="/images/martin-family.jpeg" alt="Sunset in the mountains">
+        <img class="w-full" src="/images/martin-family.jpeg" alt="Martin Chandler's family - Ocean shores">
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">Martin Chandler</div>
             <p class="text-gray-700 text-base">
