@@ -7,12 +7,7 @@ const getDatabaseData = async () => {
     const dataBaseQueryUrl = `${ROOT_NOTION_API}/databases/${process.env.DATABASE_ID}/query`;
 
     const filter = {
-        "filter": {
-            "property": "Status",
-            "select": {
-                "equals": "Published"
-            }
-        },
+        
         "sorts": [
             {
                 "property": "Published",
@@ -120,29 +115,42 @@ module.exports = async function () {
         const blockData = await getPageBlockChildrenData(result.id);
 
         const mappedBlockData = blockData.results
-        .filter(block => block[block.type].text.length)
         .map(block => {
             let mdConvert;
+            let mdText;
 
             switch(block.type) {
                 case 'heading_1':
                     mdConvert = '#';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
                     break;
                 case 'heading_2':
                     mdConvert = '##';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
                     break;
                 case 'heading_3':
                     mdConvert = '###';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
                     break;
                 case 'bulleted_list_item':
                     mdConvert = '- ';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
+                    break;
+                case 'paragraph':
+                    mdConvert = '';
+                    mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
+                    break;
+                case 'image':
+                    mdConvert = '';
+                    mdText = `![post block related](${block[block.type].file.url})`;
                     break;
                 default:
                     mdConvert = '';
+                    // mdText = block[block.type].text.length ? block[block.type].text[0].text.content : '';
                     break;
             }
 
-            return `${mdConvert} ${block[block.type].text[0].text.content}`;
+            return `${mdConvert} ${mdText}`;
         }).join('\n');
 
         return {
