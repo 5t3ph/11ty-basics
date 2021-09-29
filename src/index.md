@@ -15,8 +15,10 @@ pagination:
 {% for post in notion.posts %}
 <a href="/posts/{{ post.slug }}/" class="-m-3 p-3 flex items-start rounded-lg hover:bg-gray-50 ring-1 overflow-hidden">
     <div class="ml-4 flex">
-        <div class="rounded-lg -ml-7 -mt-3 -mb-3 mr-2 p-1">
-            <img width=100 height=125 class="max-h-32 rounded-l-lg" src="{{ post.Image | fallbackImageSrc }}" alt="relevant image for blog visual only" />
+        <div class="rounded-lg -ml-7 -mt-3 -mb-3 mr-2 p-1" style="min-width: 100px">
+            <figure class="image image-ratio-1-1">
+                <img width=100 height=125 class="media max-h-32 rounded-l-lg" src="{{ post.Image | fallbackImageSrc }}" alt="relevant image for blog visual only" />
+            </figure>
         </div>
         <div>
             <p class="text-base font-medium text-gray-900 flex items-center">

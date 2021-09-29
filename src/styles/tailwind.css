@@ -7,3 +7,52 @@
     color: transparent;
   }
 }
+
+.image {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  color: white;
+}
+
+.image-ratio-16-9 {
+  padding-bottom: 56.25%;
+}
+
+.image-ratio-1-1 {
+  padding-bottom: 100%;
+}
+
+.image-ratio-4-3 {
+  padding-bottom: 75%;
+}
+
+.image .media {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  top: 0;
+  background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22rgba%2882%2C%2099%2C%20102%2C%200.24%29%22%20width%3D%2224px%22%20height%3D%2224px%22%20viewBox%3D%220%200%2024px%2024px%22%3E%3Cpath%20d%3D%22M21%2019V5c0-1.1-.9-2-2-2H5c-1.1%200-2%20.9-2%202v14c0%201.1.9%202%202%202h14c1.1%200%202-.9%202-2zM8.5%2013.5l2.5%203.01L14.5%2012l4.5%206H5l3.5-4.5z%22%2F%3E%3C%2Fsvg%3E) center center no-repeat transparent;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.image .media::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  background-color: currentColor;
+}
+
+.image .media:not([src]) {
+  color: currentColor;
+  background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20fill%3D%27rgba%2882%2C%2099%2C%20102%2C%200.24%29%27%20width%3D%2740px%27%20height%3D%2740px%27%20viewBox%3D%270%200%2040px%2040px%27%3E%3Cpath%20fill%3D%27none%27%20d%3D%27M0%200h24v24H0zm0%200h24v24H0zm21%2019c0%201.1-.9%202-2%202H5c-1.1%200-2-.9-2-2V5c0-1.1.9-2%202-2h14c1.1%200%202%20.9%202%202%27%2F%3E%3Cpath%20fill%3D%27none%27%20d%3D%27M0%200h24v24H0z%27%2F%3E%3Cpath%20d%3D%27M21%205v6.59l-3-3.01-4%204.01-4-4-4%204-3-3.01V5c0-1.1.9-2%202-2h14c1.1%200%202%20.9%202%202zm-3%206.42l3%203.01V19c0%201.1-.9%202-2%202H5c-1.1%200-2-.9-2-2v-6.58l3%202.99%204-4%204%204%204-3.99z%27%2F%3E%3C%2Fsvg%3E') center center no-repeat transparent;
+}
